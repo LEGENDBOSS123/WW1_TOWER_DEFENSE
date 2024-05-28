@@ -22,7 +22,7 @@ var Tower = class{
         this.reload = 1500;
         this.lastAttacked = 0;
         this.fireRate = 50;
-        this.upgradeCost = 250;
+        this.upgradeCost = 300;
         this.sellValue = 100;
         this.target = null;
         this.tier = 0;
@@ -112,9 +112,11 @@ var Tower = class{
                 break;
             case 3:
                 bullet.damage = 5;
+                bullet.pierce = 2;
                 break;
             case 4:
-                bullet.damage = 15;
+                bullet.damage = 12;
+                bullet.pierce = 3;
                 break;
             default:
                 break;
@@ -127,18 +129,18 @@ var Tower = class{
         this.image = this.images[this.tier];
         switch(this.tier){
             case 1:
-                this.upgradeCost = 500;
+                this.upgradeCost = 600;
                 this.sellValue = 300;
                 break;
             case 2:
                 this.range = 200;
-                this.upgradeCost = 1200;
+                this.upgradeCost = 750;
                 this.sellValue = 700;
                 this.maxAmmo = 6;
                 this.reload = 1000;
                 break;
             case 3:
-                this.upgradeCost = 2000;
+                this.upgradeCost = 1000;
                 this.sellValue = 1200;
                 break;
             case 4:
@@ -157,9 +159,9 @@ var Tower = class{
             case 1:
                 return "x2 guns, faster reload, more range";
             case 2:
-                return "Damage from 2 -> 5";
+                return "Damage from 2 -> 5, and pierce from 1 -> 2";
             case 3:
-                return "More range and damage from 5 -> 15";
+                return "More range and damage from 5 -> 12, and pierce from 2 -> 3";
             case 4:
                 return "MAX LEVEL";
         }
@@ -207,23 +209,23 @@ var Tank = class extends Tower{
         switch(this.tier){
             case 0:
                 bullet.damage = 5;
-                bullet.blastRadius = 50;
+                bullet.blastRadius = 75;
                 break;
             case 1:
                 bullet.damage = 10;
-                bullet.blastRadius = 50;
+                bullet.blastRadius = 75;
                 break;
             case 2:
                 bullet.damage = 15;
-                bullet.blastRadius = 50;
+                bullet.blastRadius = 75;
                 break;
             case 3:
-                bullet.damage = 40;
-                bullet.blastRadius = 80;
+                bullet.damage = 25;
+                bullet.blastRadius = 120;
                 break;
             case 4:
-                bullet.damage = 80;
-                bullet.blastRadius = 100;
+                bullet.damage = 30;
+                bullet.blastRadius = 150;
                 break;
             default:
                 break;
@@ -235,16 +237,16 @@ var Tank = class extends Tower{
         this.image = this.images[this.tier];
         switch(this.tier){
             case 1:
-                this.upgradeCost = 1600;
+                this.upgradeCost = 1800;
                 this.sellValue = 600;
                 break;
             case 2:
-                this.upgradeCost = 3200;
+                this.upgradeCost = 3000;
                 this.sellValue = 1000;
-                this.reload = 2000;
+                this.reload = 1500;
                 break;
             case 3:
-                this.upgradeCost = 9000;
+                this.upgradeCost = 7500;
                 this.sellValue = 1800;
                 this.range = 400;
                 break;
@@ -253,7 +255,7 @@ var Tank = class extends Tower{
                 this.upgradeCost = -1;
                 this.sellValue = 6000;
                 this.maxAmmo = 2;
-                this.fireRate = 150;
+                this.fireRate = 300;
                 break;
             default:
                 break;
@@ -264,11 +266,11 @@ var Tank = class extends Tower{
             case 0:
                 return "Damage from 5 -> 10";
             case 1:
-                return "Damage from 10 -> 15";
+                return "Damage from 10 -> 15 and faster reload";
             case 2:
-                return "Damage from 15 -> 40 and double blast radius";
+                return "Damage from 15 -> 25 and bigger blast radius";
             case 3:
-                return "Shoots twice, more range, and damage from 40 -> 80";
+                return "Shoots twice, more range, and damage from 25 -> 30";
             case 4:
                 return "MAX LEVEL";
         }
@@ -319,15 +321,13 @@ var Minigunner = class extends Tower{
                 bullet.damage = 2;
                 break;
             case 2:
-                bullet.damage = 2;
+                bullet.damage = 3;
                 break;
             case 3:
-                bullet.damage = 3;
-                bullet.pierce = 2;
+                bullet.damage = 6;
                 break;
             case 4:
-                bullet.damage = 6;
-                bullet.pierce = 3;
+                bullet.damage = 12;
                 break;
             default:
                 break;
@@ -350,7 +350,7 @@ var Minigunner = class extends Tower{
                 this.range = 400;
                 break;
             case 3:
-                this.upgradeCost = 10000;
+                this.upgradeCost = 8000;
                 this.sellValue = 3000;
                 
                 this.reload = 0;
@@ -369,11 +369,11 @@ var Minigunner = class extends Tower{
             case 0:
                 return "Damage from 1 -> 2";
             case 1:
-                return "x1.33 range";
+                return "x1.33 range and damage from 2 -> 3";
             case 2:
-                return "Damage from 2 -> 3 and pierce from 1 -> 2";
+                return "Damage from 3 -> 6";
             case 3:
-                return "x1.25 range and damage from 3 -> 6 and pierce from 2 -> 3";
+                return "x1.25 range and damage from 6 -> 12";
             case 4:
                 return "MAX LEVEL";
         }

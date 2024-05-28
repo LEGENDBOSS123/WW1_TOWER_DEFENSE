@@ -20,7 +20,7 @@ var sleep = async function(time){
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-
+//round 1
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 150;
@@ -30,7 +30,7 @@ rounds.push(async function(){
     }
     roundstart = false;
 });
-
+//round 2
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 150;
@@ -40,11 +40,11 @@ rounds.push(async function(){
     }
     roundstart = false;
 });
-
+//round 3
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 200;
-    for(var i = 0; i < 3; i++){
+    for(var i = 0; i < 5; i++){
         makeBasicEnemy(assets, world);
         await sleep(750);
     }
@@ -54,40 +54,42 @@ rounds.push(async function(){
     }
     roundstart = false;
 });
-
+//round 4
+rounds.push(async function(){
+    roundstart = true;
+    roundMoney = 400;
+    for(var i = 0; i < 5; i++){
+        makeTankyEnemy(assets, world);
+        await sleep(500);
+    }
+    for(var i = 0; i < 5; i++){
+        makeFastEnemy(assets, world);
+        await sleep(500);
+    }
+    roundstart = false;
+});
+//round 5
+rounds.push(async function(){
+    roundstart = true;
+    roundMoney = 400;
+    for(var i = 0; i < 20; i++){
+        makeBasicEnemy(assets, world);
+        await sleep(200);
+    }
+    roundstart = false;
+});
+//round 6
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 350;
     for(var i = 0; i < 15; i++){
         makeBasicEnemy(assets, world);
+        makeFastEnemy(assets, world);
         await sleep(300);
     }
     roundstart = false;
 });
-
-rounds.push(async function(){
-    roundstart = true;
-    roundMoney = 400;
-    for(var i = 0; i < 5; i++){
-        makeTankyEnemy(assets, world);
-        await sleep(750);
-    }
-    for(var i = 0; i < 3; i++){
-        makeFastEnemy(assets, world);
-        await sleep(750);
-    }
-    roundstart = false;
-});
-
-rounds.push(async function(){
-    roundstart = true;
-    roundMoney = 400;
-    for(var i = 0; i < 10; i++){
-        makeBasicEnemy(assets, world);
-        await sleep(750);
-    }
-    roundstart = false;
-});
+//round 7
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 400;
@@ -95,32 +97,36 @@ rounds.push(async function(){
         makeBasicEnemy(assets, world);
         await sleep(750);
     }
+    for(var i = 0; i < 20; i++){
+        makeTankyEnemy(assets, world);
+        await sleep(750);
+    }
     roundstart = false;
 });
+//round 8
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 500;
     for(var i = 0; i < 30; i++){
         makeBasicEnemy(assets, world);
-        await sleep(500);
+        makeTankyEnemy(assets, world);
+        makeFastEnemy(assets, world);
+        await sleep(300);
     }
     roundstart = false;
 });
-
+//round 9
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 500;
-    for(var i = 0; i < 20; i++){
+    for(var i = 0; i < 50; i++){
+        makeFastEnemy(assets, world);
         makeTankyEnemy(assets, world);
-        await sleep(300);
-    }
-    for(var i = 0; i < 10; i++){
-        makeBasicEnemy(assets, world);
-        await sleep(300);
+        await sleep(100);
     }
     roundstart = false;
 });
-
+//round 10
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 500;
@@ -135,6 +141,26 @@ rounds.push(async function(){
     makeBasicBossEnemy(assets, world);
     roundstart = false;
 });
+//round 11
+rounds.push(async function(){
+    roundstart = true;
+    roundMoney = 500;
+    for(var i = 0; i < 20; i++){
+        makeTankyEnemy(assets, world);
+        makeBasicEnemy(assets, world);
+        await sleep(300);
+    }
+    makeBasicBossEnemy(assets, world);
+    await sleep(2000);
+    makeBasicBossEnemy(assets, world);
+    await sleep(2000);
+    for(var i = 0; i < 20; i++){
+        makeFastEnemy(assets, world);
+        await sleep(300);
+    }
+    roundstart = false;
+});
+//round 12
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 800;
@@ -154,6 +180,7 @@ rounds.push(async function(){
     makeBasicBossEnemy(assets, world);
     roundstart = false;
 });
+//round 13
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 800;
@@ -162,34 +189,36 @@ rounds.push(async function(){
         makeTankyEnemy(assets, world);
         await sleep(200);
     }
+    makeTankyFastEnemy(assets, world);
     roundstart = false;
 });
-
+//round 14
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 800;
     for(var i = 0; i < 50; i++){
         makeTankyEnemy(assets, world);
+        makeFastEnemy(assets, world);
         await sleep(100);
     }
     roundstart = false;
 });
-
+//round 15
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 1000;
-    for(var i = 0; i < 10; i++){
+    for(var i = 0; i < 20; i++){
         makeFastEnemy(assets, world);
         await sleep(200);
     }
-    await sleep(500);
+    await sleep(1000);
     for(var i = 0; i < 5; i++){
         makeTankyFastEnemy(assets, world);
-        await sleep(1000);
+        await sleep(500);
     }
     roundstart = false;
 });
-
+//round 16
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 1300;
@@ -200,17 +229,18 @@ rounds.push(async function(){
         await sleep(200);
         makeFastEnemy(assets, world);
         await sleep(200);
+        makeTankyFastEnemy(assets, world);
         makeFastEnemy(assets, world);
         await sleep(200);
         makeTankyFastEnemy(assets, world);
         makeFastEnemy(assets, world);
         await sleep(200);
         makeFastEnemy(assets, world);
-        await sleep(600);
+        await sleep(400);
     }
     roundstart = false;
 });
-
+//round 17
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 1400;
@@ -224,7 +254,7 @@ rounds.push(async function(){
     makeMediumBossEnemy(assets, world);
     roundstart = false;
 });
-
+//round 18
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 5000;
@@ -237,8 +267,13 @@ rounds.push(async function(){
     makeMediumBossEnemy(assets, world);
     await sleep(3000);
     makeMediumBossEnemy(assets, world);
+    await sleep(3000);
+    makeMediumBossEnemy(assets, world);
+    await sleep(3000);
+    makeMediumBossEnemy(assets, world);
     roundstart = false;
 });
+//round 19
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 2000;
@@ -265,7 +300,7 @@ rounds.push(async function(){
     }
     roundstart = false;
 });
-
+//round 20
 rounds.push(async function(){
     roundstart = true;
     roundMoney = 0;
@@ -619,7 +654,7 @@ var animate = function () {
         }
     }
     ctx.drawText("Health: " + world.health, new Vector2(10, 530), 20, "black", "Arial", "left");
-    ctx.drawText("Round: " + (currentRound + 1), new Vector2(10, 555), 20, "black", "Arial", "left");
+    ctx.drawText("Round: " + (currentRound), new Vector2(10, 555), 20, "black", "Arial", "left");
     ctx.drawText("Money: " + world.money, new Vector2(10, 580), 20, "black", "Arial", "left");
     requestAnimationFrame(animate);
 }
