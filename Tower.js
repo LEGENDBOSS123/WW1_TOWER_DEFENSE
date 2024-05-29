@@ -115,7 +115,7 @@ var Tower = class{
                 bullet.pierce = 2;
                 break;
             case 4:
-                bullet.damage = 12;
+                bullet.damage = 9;
                 bullet.pierce = 3;
                 break;
             default:
@@ -129,24 +129,24 @@ var Tower = class{
         this.image = this.images[this.tier];
         switch(this.tier){
             case 1:
-                this.upgradeCost = 600;
+                this.upgradeCost = 500;
                 this.sellValue = 300;
                 break;
             case 2:
                 this.range = 200;
-                this.upgradeCost = 750;
+                this.upgradeCost = 1000;
                 this.sellValue = 700;
                 this.maxAmmo = 6;
                 this.reload = 1000;
                 break;
             case 3:
-                this.upgradeCost = 1000;
-                this.sellValue = 1200;
+                this.upgradeCost = 4500;
+                this.sellValue = 1000;
                 break;
             case 4:
                 this.range = 350;
                 this.upgradeCost = -1;
-                this.sellValue = 3000;
+                this.sellValue = 2500;
                 break;
             default:
                 break;
@@ -161,7 +161,7 @@ var Tower = class{
             case 2:
                 return "Damage from 2 -> 5, and pierce from 1 -> 2";
             case 3:
-                return "More range and damage from 5 -> 12, and pierce from 2 -> 3";
+                return "More range and damage from 5 -> 9, and pierce from 2 -> 3";
             case 4:
                 return "MAX LEVEL";
         }
@@ -237,16 +237,16 @@ var Tank = class extends Tower{
         this.image = this.images[this.tier];
         switch(this.tier){
             case 1:
-                this.upgradeCost = 1800;
+                this.upgradeCost = 1200;
                 this.sellValue = 600;
                 break;
             case 2:
-                this.upgradeCost = 3000;
+                this.upgradeCost = 3500;
                 this.sellValue = 1000;
                 this.reload = 1500;
                 break;
             case 3:
-                this.upgradeCost = 7500;
+                this.upgradeCost = 5000;
                 this.sellValue = 1800;
                 this.range = 400;
                 break;
@@ -339,7 +339,7 @@ var Minigunner = class extends Tower{
         this.image = this.images[this.tier];
         switch(this.tier){
             case 1:
-                this.upgradeCost = 2800;
+                this.upgradeCost = 2000;
                 this.sellValue = 800;
                 this.reload = 60;
                 break;
@@ -350,7 +350,7 @@ var Minigunner = class extends Tower{
                 this.range = 400;
                 break;
             case 3:
-                this.upgradeCost = 8000;
+                this.upgradeCost = 9200;
                 this.sellValue = 3000;
                 
                 this.reload = 0;
