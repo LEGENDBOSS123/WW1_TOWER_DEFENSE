@@ -23,7 +23,7 @@ var sleep = async function(time){
 //round 1
 rounds.push(async function(){
     roundstart = true;
-    roundMoney = 150;
+    roundMoney = 200;
     for(var i = 0; i < 3; i++){
         makeBasicEnemy(assets, world);
         await sleep(750);
@@ -33,7 +33,7 @@ rounds.push(async function(){
 //round 2
 rounds.push(async function(){
     roundstart = true;
-    roundMoney = 150;
+    roundMoney = 250;
     for(var i = 0; i < 5; i++){
         makeBasicEnemy(assets, world);
         await sleep(750);
@@ -43,7 +43,7 @@ rounds.push(async function(){
 //round 3
 rounds.push(async function(){
     roundstart = true;
-    roundMoney = 200;
+    roundMoney = 380;
     for(var i = 0; i < 5; i++){
         makeBasicEnemy(assets, world);
         await sleep(750);

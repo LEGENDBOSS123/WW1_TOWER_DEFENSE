@@ -111,7 +111,7 @@ var Tower = class{
                 bullet.damage = 2;
                 break;
             case 3:
-                bullet.damage = 5;
+                bullet.damage = 4;
                 bullet.pierce = 2;
                 break;
             case 4:
@@ -134,7 +134,7 @@ var Tower = class{
                 break;
             case 2:
                 this.range = 200;
-                this.upgradeCost = 1000;
+                this.upgradeCost = 900;
                 this.sellValue = 700;
                 this.maxAmmo = 6;
                 this.reload = 1000;
@@ -159,9 +159,9 @@ var Tower = class{
             case 1:
                 return "x2 guns, faster reload, more range";
             case 2:
-                return "Damage from 2 -> 5, and pierce from 1 -> 2";
+                return "Damage from 2 -> 4, and pierce from 1 -> 2";
             case 3:
-                return "More range and damage from 5 -> 9, and pierce from 2 -> 3";
+                return "More range and damage from 4 -> 9, and pierce from 2 -> 3";
             case 4:
                 return "MAX LEVEL";
         }
