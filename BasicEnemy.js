@@ -75,7 +75,7 @@ var makeBasicEnemy = function(assets, world){
     e.health = 10;
     e.maxHealth = e.health;
     e.radius = 30;
-    e.value = 30;
+    e.value = 15;
     world.enemies.push(e);
 }
 
@@ -92,7 +92,7 @@ var makeTankyEnemy = function(assets, world){
     e.health = 60;
     e.maxHealth = e.health;
     e.radius = 30;
-    e.value = 80;
+    e.value = 40;
     world.enemies.push(e);
 }
 
@@ -106,7 +106,7 @@ var makeBasicBossEnemy = function(assets, world){
     e.health = 500;
     e.maxHealth = e.health;
     e.radius = 40;
-    e.value = 140;
+    e.value = 100;
     world.enemies.push(e);
 }
 
@@ -120,7 +120,7 @@ var makeMediumBossEnemy = function(assets, world){
     e.health = 3000;
     e.maxHealth = e.health;
     e.radius = 40;
-    e.value = 280;
+    e.value = 300;
     world.enemies.push(e);
 }
 
@@ -148,7 +148,7 @@ var makeFastEnemy = function(assets, world){
     e.health = 12;
     e.maxHealth = e.health;
     e.radius = 25;
-    e.value = 40;
+    e.value = 20;
     world.enemies.push(e);
 }
 
@@ -164,6 +164,6 @@ var makeTankyFastEnemy = function(assets, world){
     e.health = 350;
     e.maxHealth = e.health;
     e.radius = 30;
-    e.value = 120;
+    e.value = 60;
     world.enemies.push(e);
 }
